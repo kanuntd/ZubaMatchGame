@@ -1,0 +1,91 @@
+
+html {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -o-background-size: 100% 100%, auto;
+    -moz-background-size: 100% 100%, auto;
+    -webkit-background-size: 100% 100%, auto;
+    background-size: 100% 100%, auto;
+   
+}
+#bgindex{
+    background-image: url("image/bg.png");
+}
+#bgcity{
+    background-image: url("image/city.jpg");
+}
+#bgice{
+    background-image: url("image/ice.png");
+}
+
+.logoZuba{
+    height: 50%;
+    width: 50%;
+    padding-top : 150px; 
+    margin-left: 45%;
+}
+.buttonPlay{
+    height: 15%;
+    width: 15%;
+    margin-left: 65%;
+    padding-top : 30px;
+}
+
+#bag1{
+    height: 10%;
+    width: 10%;
+    padding-top : 110px;
+    margin-left: 13%;
+}
+#sign1{
+    height: 8%;
+    width: 8%;
+    padding-top: 110px;
+    margin-left: 7%;
+}
+#bag2{
+    height: 10%;
+    width: 10%;
+    padding-top : 110px;
+    margin-left: 7%;
+}
+#sign2{
+    height: 8%;
+    width: 8%;
+    padding-top: 110px;
+    margin-left: 5%;
+}
+#bag3{
+    height: 10%;
+    width: 10%;
+    padding-top: 110px;
+    margin-left: 7%;
+}
+#bag4{
+    height: 10%;
+    width: 10%;
+    padding-top: 25px;
+    margin-left: 29%;
+}
+#bag5{
+    height: 10%;
+    width: 10%;
+    padding-top: 25px;
+    margin-left: 23%;
+}
+#bag6{
+    height: 10%;
+    width: 10%;
+    margin-left: 9%;
+}
+#bag7{
+    height: 10%;
+    width: 10%;
+    margin-left: 26%;
+}
+#bag8{
+    height: 10%;
+    width: 10%;
+    margin-left: 26%;
+}
