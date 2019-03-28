@@ -119,3 +119,71 @@ html {
 .bag7{
     margin-left: 82%;  
 }
+
+
+/* --------------------------------------------Best---------------------------------------------------- */
+#bglava{
+    background-image: url("image/lava.jpg");
+}
+
+button.card{
+    width: 80px;
+    height: 100px;
+    margin: 10;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card-score{
+    font-weight: bold;
+    font-size: 20pt;
+    color: black;
+}
+
+.area{
+    background-color: rgba(221, 129, 201, 0.671);
+    height: 440px;
+    width: 50%;
+    padding: 2%;
+    margin-left: 21%;
+    margin-right: 21%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+button.buttonOK{
+    background-color: rgba(16, 235, 125, 0.849);
+    border-color: rgb(54, 52, 52); 
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 6%;
+    float: right;
+}
+
+.sBoard{
+    background-color: rgba(250, 150, 18, 0.685);
+    margin-right: 24%;
+    float: right;
+    color: rgb(216, 42, 42);
+}
+
+.label{
+    margin-left: 2%;
+    margin-right: -10%;
+    float: left;
+}
+
+.command{
+    margin-left: 22%;
+    margin-bottom: -10%;
+    float: left;
+}
+
+.alertScore{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 43%;
+    margin-bottom: 2%;
+    float: left;
+}

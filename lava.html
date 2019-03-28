@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" id="bglava">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zuba Math</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="lava.js"></script>
+</head>
+
+<body onload="load()">
+    <br>
+    <br>
+
+    <h1 id="scoreboard" class="sBoard">&nbsp;&nbsp;Score : 0&nbsp;&nbsp;</h1>
+
+    <h2 id="checkPoint" class="command">คำสั่ง&nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก</h2>
+
+    <br>
+    <br>
+
+    <h2 id="alertPoint" class="alertScore"></h2>
+
+    <div class="area">
+        <br>
+        <br>
+        <br>
+        <div>
+            <h3 class="label">คำตอบ = </h3>
+
+            <button id="ans1" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans2" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans3" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans4" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans5" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans6" class="card" onclick="ansClick(this)" disabled></button>
+
+            <button id="ans7" class="card" onclick="ansClick(this)" disabled></button>
+        </div>
+        <br>
+        <br>
+
+        <!-- ++++++++++++ clock ++++++++++++ -->
+        <h2 id="countdowntimer"> Game over in 30 Seconds</h2>
+
+        <br>
+        <div>
+            <h3 class="label">โจทย์ &nbsp; = </h3>
+
+            <button id="random1" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random2" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random3" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random4" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random5" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random6" class="card" onclick="randomClick(this)"></button>
+
+            <button id="random7" class="card" onclick="randomClick(this)"></button>
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <button class="buttonOK" id="okClick" onclick="checkAns()">OK</button>
+        </div>
+
+    </div>
+
+</body>
+
+</html>
