@@ -13,10 +13,15 @@
 </head>
 
 <body onload="init()">
-
-    <div class="buttonBar">
-        <div class="progressbar" id="time"> S </div>
+    <div id="title">
+        <label class="scroe" id="scoreCs">Your Score : 0</label>
+        <label class="clock" id="timeCs">
+            20
+        </label>
     </div>
+    <!-- <div class="buttonBar">
+        <div class="progressbar" id="time"> S </div>
+    </div> -->
     <div class="timeArea">
         <div class="areaCas" ondrop="drop(event)" ondragover="allowDrop(event)" id="1">
             <img class="myImg" src="" draggable="true" ondragstart="drag(event)" id="drag1">
@@ -29,7 +34,7 @@
         </div>
     </div>
     <div class="buttonBar">
-        <img class="myImg" src="image/next.png" id="demo" onclick="next()">
+        <img class="myImg" src="image/next.png" onclick="next()" id="demo">
     </div>
 </body>
 

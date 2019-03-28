@@ -27,15 +27,16 @@ function drop(ev) {
     }
 }
 function init() {
-    var timeleft = 20;
+    var timeleft = 19;
     var downloadTimer = setInterval(function () {
-        document.getElementById("time").innerHTML = timeleft + " seconds remaining";
+        document.getElementById("timeCs").innerHTML = timeleft;
         timeleft -= 1;
-        if (timeleft <= 0) {
+        if (timeleft == 0) {
             clearInterval(downloadTimer);
-            document.getElementById("time").innerHTML = "Finished"
+            document.getElementById("timeCs").innerHTML = "0"
+            Timeout();
         }
-    }, 1000);
+    }, 200);
 
     random();
 }
@@ -52,6 +53,10 @@ function random() {
     document.getElementById("drag2").src = d2;
     document.getElementById("drag3").src = d3;
 }
+var result1;
+var result2;
+var result3;
+var point = 0;
 function next() {
     var path1 = (document.getElementById("drag1").src);
     var path2 = (document.getElementById("drag2").src);
@@ -59,8 +64,29 @@ function next() {
     var num1 = (document.getElementById("drag1").src).indexOf("clock.png");
     var num2 = (document.getElementById("drag2").src).indexOf("clock.png");
     var num3 = (document.getElementById("drag3").src).indexOf("clock.png");
-    var result1 = path1.charAt(num1-1);
-    var result2 = path2.charAt(num2-1);
-    var result3 = path3.charAt(num3-1);
+    result1 = path1.charAt(num1 - 1);
+    result2 = path2.charAt(num2 - 1);
+    result3 = path3.charAt(num3 - 1);
     console.log(`${result1} -- ${result2} -- ${result3}`)
+    var time = document.getElementById("timeCs").textContent
+    console.log(time + "--------")
+
+    if ((result1 < result2) && (result2 < result3)) {
+        point += 5;
+        var score = document.getElementById("scoreCs")
+        score.innerHTML = `Your Score : ${point}`
+        console.log(score + "555555555555555")
+    } else {
+        if (point > 1) {
+            point -= 2;
+            var score = document.getElementById("scoreCs")
+            score.innerHTML = `Your Score : ${point}`
+        }else{
+            point = 0;
+        }
+    }
+    random()
+}
+function Timeout() {
+    window.location.href = "star.html?"+point
 }

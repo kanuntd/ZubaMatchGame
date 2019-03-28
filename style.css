@@ -1,0 +1,263 @@
+
+html {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -o-background-size: 100% 100%, auto;
+    -moz-background-size: 100% 100%, auto;
+    -webkit-background-size: 100% 100%, auto;
+    background-size: 100% 100%, auto;
+   
+}
+#bgindex{
+    background-image: url("image/bg.png");
+}
+#bgcity{
+    background-image: url("image/city.jpg");
+}
+#bgice{
+    background-image: url("image/ice.png");
+}
+#title{
+    margin-top: 10px;
+}
+/* -----------------------------timer */
+.clock{
+    width: 110px;
+    height: 79px;
+    float: right;
+    font-size: 50px;
+    font-weight: bold;
+    margin-right: 30px;
+    padding-top: 2%;
+    text-align: center; 
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-image: url(image/clock1.png);
+}
+.scroe{
+    width: 100px;
+    height: 50px;
+    border: 6px solid rgb(255, 147, 45);
+    border-radius: 8px;
+    background-color: beige;
+    margin-left: 35%;
+    font-size: 50px;
+    font-weight: bold;
+    color: rgb(48, 46, 45);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.logoZuba{
+    height: 50%;
+    width: 50%;
+    padding-top : 150px; 
+    margin-left: 45%;
+}
+.buttonPlay{
+    height: 15%;
+    width: 15%;
+    margin-left: 65%;
+    padding-top : 30px;
+}
+.imageBox{
+    float: left;
+    width: 200px;
+    height: 210px;
+    margin-top : 3%;
+}
+.imageBox1{
+    float: left;
+    width: 250px;
+    height: 210px;
+    margin-top : 0;
+    
+}
+.imageBox2{
+    width: 250px;
+    height: 210px;
+    margin-top : 0%;
+    
+}
+.imageBox3{
+    width: 250px;
+    height: 210px;
+    margin-top : 16%;
+}
+
+.sizeImage{
+    width: 250px;
+    height: 210px;
+}
+.sizeSyntax{
+    width: 100px;
+    height: 110px;
+}
+
+.bag1{
+    margin-left: 10%;
+}
+.sign1{
+    margin-left: 6%;
+    width: 120px;
+    height: 130px;
+}
+.bag2{
+    margin-left: 2%;
+}
+.sign2{
+    margin-left: 7%;
+    width: 120px;
+    height: 130px;
+}
+.bag3{
+    margin-left: 3%;
+
+}
+.bag4{
+    margin-left: 25%;
+}
+.bag5{ 
+    margin-left: 14%;
+
+}
+.bag6{
+    margin-left: 9%;
+}
+.bag7{
+    margin-left: 72%;  
+}
+
+
+/* --------------------------------------------Best---------------------------------------------------- */
+#bglava{
+    background-image: url("image/lava.jpg");
+}
+
+button.card{
+    width: 80px;
+    height: 100px;
+    margin: 10;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.card-score{
+    font-weight: bold;
+    font-size: 20pt;
+    color: black;
+}
+
+.area{
+    background-color: rgba(221, 129, 201, 0.671);
+    height: 440px;
+    width: 50%;
+    padding: 2%;
+    margin-left: 21%;
+    margin-right: 21%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+button.buttonOK{
+    background-color: rgba(16, 235, 125, 0.849);
+    border-color: rgb(54, 52, 52); 
+    width: 80px;
+    height: 40px;
+    font-weight: bold;
+    margin-right: 6%;
+    float: right;
+}
+
+.sBoard{
+    background-color: rgba(250, 150, 18, 0.685);
+    margin-right: 24%;
+    float: right;
+    color: rgb(216, 42, 42);
+}
+
+.label{
+    margin-left: 2%;
+    margin-right: -10%;
+    float: left;
+}
+
+.command{
+    margin-left: 22%;
+    margin-bottom: -10%;
+    float: left;
+}
+
+.alertScore{
+    text-align: center;
+    margin-top: 3%;
+    margin-left: 43%;
+    margin-bottom: 2%;
+    float: left;
+}
+/* -------------------------------------------alex-------------------------------- */
+#bgcastle{
+    background-image: url("image/level3.png");
+}
+.areaCas {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0 4%;
+    /* border: 1px solid black; */
+    /* background-color: aqua; */
+}
+.timeArea{
+    /* background-color: bisque; */
+    height: 30%;
+    width: 80%;
+    padding: 1%;
+    margin: 5% 8% 2%;
+    text-align: center;
+}
+.areaCas > img{
+    height: 100%;
+    width: 100%
+}
+.buttonBar{
+    /* background-color: bisque; */
+    height: 80px;
+    width: 65%;
+    margin: 0% 15% 2%;
+    padding: 0% 0%;
+    text-align: center;
+}
+.buttonBar > img{
+    height: 100%;
+    width: 11%;
+}
+.progressbar{
+    background-color: aqua;
+    width: 50%
+
+}
+.myImg:hover {opacity: 0.7;}
+/* -------------------------------------Star-------------------------------- */
+#bgstar{
+    background-color: rgb(248, 177, 62);
+}
+.frameStar{
+    display: inline-block;
+    width: 60%;
+    height: 300px;
+    margin: 12% 19%;
+    /* border: 13px solid rgb(246, 250, 1); */
+    text-align: center;
+    /* background-color: aqua; */
+}
+.frameStar > .img1{
+    width: 50%;
+}
+.frameStar > .img2{
+    width: 6%;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+.frameStar > p{
+    font-size: 50px;
+    margin: 0 0 0 0;
+}
