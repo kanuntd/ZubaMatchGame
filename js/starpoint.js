@@ -13,11 +13,11 @@ function castlePoint(){
     star = star[1]
     star = star.charAt(0);
     if(totalpoint >= 15){
-        
+        document.getElementById("star").src = `image/${3}Satr.png`
     }else if(totalpoint >= 10){
-
+        document.getElementById("star").src = `image/${2}Satr.png`
     }else if(totalpoint >= 5){
-
+        document.getElementById("star").src = `image/${1}Satr.png`
     }else{
 
     }
