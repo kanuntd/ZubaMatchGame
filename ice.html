@@ -2,49 +2,55 @@
 <html lang="en" id="bgice">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="style.css" rel="stylesheet" />
-    <script type="text/javascript" src="js/ice.js"></script>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link href="style.css" rel="stylesheet" />
+        <script type="text/javascript" src="js/ice.js"></script>
 </head>
 <title>Zuba Math</title>
 </head>
 
-<body>
-    <div class="imageBox bag1" >
-        <img src="image/number/1.png" class="sizeImage">
-    </div>
+<body onload="onload()">
+        <div id="title">
+                <label class="scroe">Score : </label>
+                <img class="clock" src="image/clock.png">
+        </div>
+        <div class="imageBox bag1">
+                <img class="sizeImage" id="bag1">
+        </div>
 
-    <div class="imageBox sign1">
-            <img src="image/number/plus.png" class="sizeSyntax">
-    </div>
+        <div class="imageBox sign1">
+                <img src="image/number/plus.png" class="sizeSyntax" id="sign">
+        </div>
 
-    <div class="imageBox bag2">
-        <img src="image/number/2.png" class="sizeImage" >
-    </div>
-    <div class="imageBox sign2">
-            <img src="image/number/equal.png" class="sizeSyntax">
-    </div>
-    <div class="imageBox bag3">
-            <img src="image/number/question.png" class="sizeImage" ondrop="drop(event)" ondragover="allowDrop(event)" id="drag">
-    </div>
-    <br>
-    <div class="imageBox1 bag4"  ondragover="allowDrop(event)">
-        <img src="image/number/4.png" class="sizeImage" draggable="true" ondragstart="drag(event)" id="drag1" class="sizeImage">
-    </div>
-    <div class="imageBox1 bag5"  ondragover="allowDrop(event)">
-            <img src="image/number/5.png" class="sizeImage" draggable="true" ondragstart="drag(event)" id="drag2" class="sizeImage">
-    </div>
-    
-    <div class="imageBox2 bag6"  ondragover="allowDrop(event)">
-            <img src="image/number/6.png" class="sizeImage" draggable="true" ondragstart="drag(event)" id="drag3" class="sizeImage">
-    </div>
-    <div class="imageBox3 bag7"  ondragover="allowDrop(event)">
-            <img src="image/number/7.png" class="sizeImage" draggable="true" ondragstart="drag(event)" id="drag4" class="sizeImage">
-    </div>
+        <div class="imageBox bag2">
+                <img class="sizeImage" id="bag2">
+        </div>
+        <div class="imageBox sign2">
+                <img src="image/number/equal.png" class="sizeSyntax">
+        </div>
+        <div class="imageBox bag3">
+                <img src="image/number/question.png" class="sizeImage" ondrop="drop(event)"
+                        ondragover="allowDrop(event)" id="bag3">
+        </div>
+        <br>
+        <div class="imageBox1 bag4" ondragover="allowDrop(event)">
+                <img class="sizeImage" draggable="true" ondragstart="drag(event)" id="bag4" class="sizeImage">
+        </div>
 
-    
+        <div class="imageBox1 bag5" ondragover="allowDrop(event)">
+                <img class="sizeImage" draggable="true" ondragstart="drag(event)" id="bag5" class="sizeImage">
+        </div>
+
+        <div class="imageBox2 bag6" ondragover="allowDrop(event)">
+                <img class="sizeImage" draggable="true" ondragstart="drag(event)" id="bag6" class="sizeImage">
+        </div>
+        <div class="imageBox3 bag7" ondragover="allowDrop(event)">
+                <img class="sizeImage" draggable="true" ondragstart="drag(event)" id="bag7" class="sizeImage">
+        </div>
+
+
 </body>
 
 </html>
