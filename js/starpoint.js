@@ -5,8 +5,10 @@ function getPoint(){
     var point = url.split("?");
     totalpoint = point[1]
     document.getElementById("totalpoint").textContent = `Your Score : ${totalpoint}`
-    castlePoint()
-    
+    var lv = point[2]
+    if(lv == "cs"){
+        castlePoint()
+    }
 }
 function castlePoint(){
     var star = document.getElementById("star").src
@@ -20,7 +22,7 @@ function castlePoint(){
     }else if(totalpoint >= 5){
         document.getElementById("star").src = `image/${1}Satr.png`
     }else{
-
+        document.getElementById("star").src = `image/${0}Satr.png`
     }
     console.log(totalpoint)
     console.log(star)

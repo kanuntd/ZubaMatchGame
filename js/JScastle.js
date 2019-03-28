@@ -36,7 +36,7 @@ function init() {
             document.getElementById("timeCs").innerHTML = "0"
             Timeout();
         }
-    }, 200);
+    }, 120);
 
     random();
 }
@@ -88,5 +88,5 @@ function next() {
     random()
 }
 function Timeout() {
-    window.location.href = "star.html?"+point
+    window.location.href = "star.html?"+point+"?cs"
 }
