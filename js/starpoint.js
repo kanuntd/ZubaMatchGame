@@ -6,6 +6,7 @@ function getPoint(){
     totalpoint = point[1]
     document.getElementById("totalpoint").textContent = `Your Score : ${totalpoint}`
     castlePoint()
+    
 }
 function castlePoint(){
     var star = document.getElementById("star").src
