@@ -5,6 +5,13 @@ var ansCards = [];
 var score = 0;
 var solve = [];
 
+function start() {
+    if (checkPoint < 0 || checkPoint > 3) {
+        window.location = "./ice1.html"
+    } else {
+        beforeGame();
+    }
+}
 
 function load() {
 
@@ -16,14 +23,14 @@ function load() {
 
     //เช็คว่าเป็นด่านไหน
     if (checkPoint === 1) {
-        document.getElementById("checkPoint").innerHTML = "Checkpoinr &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
+        document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCard();
     } else if (checkPoint === 2) {
-        document.getElementById("checkPoint").innerHTML = "Checkpoinr &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
+        document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCardNormal();
     }
     else if (checkPoint === 3) {
-        document.getElementById("checkPoint").innerHTML = "Checkpoinr &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
+        document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCardHard();
     }
     //alert("Are you ready!!");
@@ -33,16 +40,13 @@ function load() {
     var timeleft = 30;
 
     //ก่อนนับ
-    document.getElementById("countdowntimer").innerHTML = "Game over in &nbsp;" +timeleft+ "&nbsp; Seconds";
-    document.getElementById("countdowntimer").style.color = "#000000";
+    document.getElementById("timeCs").innerHTML = timeleft;
 
     var overTimer = setInterval(function () {
         timeleft--;
-        document.getElementById("countdowntimer").innerHTML = "Game over in &nbsp;" +timeleft+ "&nbsp; Seconds";
+        document.getElementById("timeCs").innerHTML = timeleft;
         if (timeleft <= 0) {
             clearInterval(overTimer);
-            document.getElementById("countdowntimer").innerHTML = "Game Over.";
-            document.getElementById("countdowntimer").style.color = "#ff0000";
             gameStop();
         }
     }, 1000);
@@ -179,7 +183,7 @@ function checkAns() {
 
 //setTextScore
 function setTextScore() {
-    document.getElementById("scoreboard").innerHTML = "&nbsp;&nbsp;Score : &nbsp;&nbsp;" + score
+    document.getElementById("scoreboard").innerHTML = "&nbsp;&nbsp;Score : " + score + "&nbsp;&nbsp;"
 }
 
 
@@ -232,6 +236,7 @@ function gameStop() {
     //set disabled=true button random
     for (i = 0; i < cardMax; i++) {
         var random = document.getElementById(String("random" + (i + 1)));
+        random.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
         random.disabled = true;
         //console.log(random);
     }
@@ -239,6 +244,7 @@ function gameStop() {
     //set disabled=true button ans
     for (i = 0; i < cardMax; i++) {
         var ans = document.getElementById(String("ans" + (i + 1)));
+        ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
         ans.removeAttribute("data-score");
         ans.disabled = true;
         //console.log(ans);
@@ -250,37 +256,83 @@ function gameStop() {
     //เพิ่มค่าเพื่อจะเปลี่ยนด่าน
     checkPoint = checkPoint + 1;
 
-    //ถ้าครบ 3 ด่านแล้วไปหน้าถัดไป
-    if(checkPoint === 4){
-        window.location = "./ice.html"
+    //-----------------------ถ้าครบ 3 ด่านแล้วไปหน้าถัดไป------------------------
+    if (checkPoint === 4) {
+        //ครบ 3 เกมแล้ว
+        afterGame();
     }
 
-    //จบเกมเตรียมไปหน้าต่อไป
-    alertNext();
+    else {
+        //ยังไม่ครบ 3 เกม และ จบเกมเตรียมไปหน้าต่อไป
+        alertNext();
+    }
+
+
 }
 
 
 //alert to next checkpoint
 function alertNext() {
+
+    //----------ส่วนแสดงคะแนน----------
+
+
+
+    //--------------------------------
+
+
     var timeleft = 10;
     var overTimer = setInterval(function () {
         timeleft--;
-        document.getElementById("alertPoint").innerHTML ="next checkpoint in" +timeleft;
+        document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next checkpoint in &nbsp;" + timeleft + "&nbsp&nbsp";
         if (timeleft < 0) {
             clearInterval(overTimer);
-            document.getElementById("alertPoint").innerHTML ="";
+            document.getElementById("alertPoint").innerHTML = "";
             load();
         }
     }, 1000);
 }
 
-function pause10s(){
+//before Game
+function beforeGame() {
+
+    //แสดง checkpoint & numClock
+    document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
+    document.getElementById("timeCs").innerHTML = 30;
+
+    //ปิดปุ่ม OK
+    document.getElementById("okClick").disabled = true;
+
+    //set disabled=true button random
+    for (i = 0; i < cardMax; i++) {
+        var random = document.getElementById(String("random" + (i + 1)));
+        random.disabled = true;
+        //console.log(random);
+    }
+
+    //time
     var timeleft = 10;
     var overTimer = setInterval(function () {
         timeleft--;
+        document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp Game starts in &nbsp;" + timeleft + "&nbsp&nbsp";
         if (timeleft < 0) {
             clearInterval(overTimer);
+            document.getElementById("alertPoint").innerHTML = "";
             load();
+        }
+    }, 1000);
+}
+
+//after Game
+function afterGame() {
+    var timeleft = 10;
+    var overTimer = setInterval(function () {
+        timeleft--;
+        document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next game in &nbsp;" + timeleft + "&nbsp&nbsp";
+        if (timeleft < 0) {
+            clearInterval(overTimer);
+            document.getElementById("alertPoint").innerHTML = "";
+            window.location = "./ice1.html"
         }
     }, 1000);
 }

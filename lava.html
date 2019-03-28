@@ -10,7 +10,7 @@
     <script src="js/lava.js"></script>
 </head>
 
-<body onload="load()">
+<body onload="start()">
     <br>
     <br>
 
@@ -21,7 +21,7 @@
     <br>
     <br>
 
-    <h2 id="alertPoint" class="alertScore"></h2>
+    <!-- <h2 id="alertStar" class="scoreStar"></h2> -->
 
     <div class="area">
         <br>
@@ -48,8 +48,13 @@
         <br>
 
         <!-- ++++++++++++ clock ++++++++++++ -->
-        <h2 id="countdowntimer"> Game over in 30 Seconds</h2>
+        <label class="clockBest" id="timeCs"></label>
+        <!-- <h2 id="countdowntimer"> Game over in 30 Seconds</h2> -->
 
+        <br>
+        <br>
+        <br>
+        <br>
         <br>
         <div>
             <h3 class="label">โจทย์ &nbsp; = </h3>
@@ -77,6 +82,9 @@
         </div>
 
     </div>
+
+    <!-- ตัวนับไปรอบถัดไป -->
+    <h2 id="alertPoint" class="alertScore"></h2>
 
 </body>
 

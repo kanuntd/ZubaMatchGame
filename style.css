@@ -147,14 +147,14 @@ button.card{
 }
 
 .area{
-    background-color: rgba(221, 129, 201, 0.671);
-    height: 440px;
+    background-color: rgba(221, 129, 201, 0.596);
+    height: 460px;
     width: 50%;
     padding: 2%;
     margin-left: 21%;
     margin-right: 21%;
     margin-top: 5%;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
     text-align: center;
 }
 
@@ -190,9 +190,23 @@ button.buttonOK{
 .alertScore{
     text-align: center;
     margin-top: 3%;
-    margin-left: 43%;
+    margin-left: 41.5%;
     margin-bottom: 2%;
     float: left;
+    background-color: rgba(91, 250, 18, 0.698);
+}
+
+.clockBest{
+    width: 80px;
+    height: 53px;
+    float: right;
+    margin-right: 46.5%;
+    font-weight: bold;
+    text-align: center; 
+    padding-top: 28px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    background-image: url(image/clock2.png);
 }
 /* -------------------------------------------alex-------------------------------- */
 #bgcastle{
