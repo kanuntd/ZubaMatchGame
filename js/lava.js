@@ -179,7 +179,7 @@ function checkAns() {
 
 //setTextScore
 function setTextScore() {
-    document.getElementById("scoreboard").innerHTML = "Score : " + score
+    document.getElementById("scoreboard").innerHTML = "&nbsp;&nbsp;Score : &nbsp;&nbsp;" + score
 }
 
 
