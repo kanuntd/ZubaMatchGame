@@ -187,3 +187,45 @@ button.buttonOK{
     margin-bottom: 2%;
     float: left;
 }
+/* -------------------------------------------alex-------------------------------- */
+#bgcastle{
+    background-image: url("image/level3.png");
+}
+.areaCas {
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    margin: 0 4%;
+    /* border: 1px solid black; */
+    /* background-color: aqua; */
+}
+.timeArea{
+    /* background-color: bisque; */
+    height: 30%;
+    width: 80%;
+    padding: 1%;
+    margin: 5% 8% 2%;
+    text-align: center;
+}
+.areaCas > img{
+    height: 100%;
+    width: 100%
+}
+.buttonBar{
+    background-color: bisque;
+    height: 80px;
+    width: 65%;
+    margin: 0% 15% 2%;
+    padding: 0% 0%;
+    text-align: center;
+}
+.buttonBar > img{
+    height: 100%;
+    width: 11%;
+}
+.progressbar{
+    background-color: aqua;
+    width: 50%
+
+}
+.myImg:hover {opacity: 0.7;}
