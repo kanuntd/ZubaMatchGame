@@ -50,8 +50,7 @@ function multiORdiv() {
   var bag1 = document.getElementById("bag1");
   bag1.src = "image/number/" + num1 + ".png";
 
-  var bag2 = document.getElementById("bag2");
-  bag2.src = "image/number/" + num2 + ".png";
+ 
 
   var bag3 = document.getElementById("bag3");
   bag3.src = "image/number/question.png";
@@ -73,6 +72,8 @@ function multiORdiv() {
     signImage.src = "image/number/division.png";
     result = num1 / num2;
   }
+  var bag2 = document.getElementById("bag2");
+  bag2.src = "image/number/" + num2 + ".png";
 
   //Result incorrect!
   if (result == 0) {
