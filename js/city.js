@@ -1,3 +1,8 @@
+/*id 1-9 เป็น id รูปปกติ
+id 1load-9load เป็น id รูปโหลดเรียงตามปุ่ม
+id 1gray-9gray เป็น id รูปสีเทา ไม่สามารถกดเล่นได้*/ 
+
+
 function onload(){
     // document.getElementById("1").style.visibility = "hidden";
     document.getElementById("2").style.visibility = "hidden";
