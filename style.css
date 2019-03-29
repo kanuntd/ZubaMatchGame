@@ -275,3 +275,64 @@ button.buttonOK{
     font-size: 50px;
     margin: 0 0 0 0;
 }
+
+/******************************city*******************************/
+.sizeButton{
+    width: 100px;
+    height: 70px;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -100px;
+}
+.location1{
+    top: 37%;
+    left: 64%;
+}
+.location2{
+    top: 27%;
+    left: 47%;
+}
+.location3{
+    top: 47%;
+    left: 36%;
+}
+.location4{
+    top: 62%;
+    left: 23%;
+}
+.location5{
+    top: 83%;
+    left: 33%;
+}
+.location6{
+    top: 94%;
+    left: 52%;
+}
+.location7{
+    top: 92%;
+    left: 71%;
+}
+.location8{
+    top: 80%;
+    left: 90%;
+}
+.location9{
+    top: 70%;
+    left: 72%;
+}
+.loader {
+    border: 16px solid #fdcf36;
+    border-radius: 50%;
+    border-top: 16px solid #fdcf36;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
