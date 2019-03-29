@@ -53,6 +53,15 @@ html {
     padding-top : 150px; 
     margin-left: 45%;
 }
+.zuba{
+    width: 450px;
+    height: 450px;;
+    position: absolute;
+    margin-top: -100px;
+    margin-left: -100px;
+    top: 50%;
+    left: 20%;
+}
 .buttonPlay{
     height: 15%;
     width: 15%;
