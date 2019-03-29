@@ -28,3 +28,18 @@ function castlePoint(){
     console.log(totalpoint)
     console.log(star)
 }
+function icePoint(){
+    var star = document.getElementById("star").src
+    star = star.split("image/")
+    star = star[1]
+    star = star.charAt(0);
+    if(totalpoint >=800){
+        document.getElementById("star").src = `image/${3}Satr.png`
+    }else if(totalpoint >=700){
+        document.getElementById("star").src = `image/${2}Satr.png`
+    }else if(totalpoint >=500){
+        document.getElementById("star").src = `image/${2}Satr.png`
+    }else{
+        document.getElementById("star").src = `image/${0}Satr.png`
+    }
+}
