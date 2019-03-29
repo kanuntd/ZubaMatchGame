@@ -9,6 +9,7 @@ function getPoint(){
     if(lv == "cs"){
         castlePoint()
     }
+    console.log(lv)
 }
 function castlePoint(){
     var star = document.getElementById("star").src
