@@ -10,6 +10,8 @@ function getPoint() {
     var lv = point[2]
     if (lv == "cs") {
         castlePoint()
+    } else if (lv == "ice") {
+        icePoint()
     }
     console.log(lv)
 }
@@ -34,7 +36,31 @@ function castlePoint() {
     console.log("point " + totalpoint)
     console.log("star " + star)
 }
-// ----ถัดไป
+function icePoint() {
+    star = document.getElementById("star").src
+    star = star.split("image/")
+    star = star[1]
+    star = star.charAt(0);
+    if (totalpoint >= 800) {
+        document.getElementById("star").src = `image/${3}Satr.png`
+        star = 3
+    } else if (totalpoint >= 600) {
+        document.getElementById("star").src = `image/${2}Satr.png`
+        star = 2
+    } else if (totalpoint >= 400) {
+        document.getElementById("star").src = `image/${1}Satr.png`
+        star = 1
+    } else {
+        document.getElementById("star").src = `image/${0}Satr.png`
+        star = 0
+    }
+    // console.log("point " + totalpoint)
+    // console.log("star " + star)
+}
+
+
+
+// ----ถัดไป ----- ไว้ล่างสุด
 function next() {
     var now = window.location.href;
     now = now.split("?")
@@ -42,26 +68,11 @@ function next() {
     var max = window.location.href;
     max = max.split("?")
     max = max[3]
-    if((star > 0 && max != 9) && (now == max)){
+    if ((star > 0 && max != 9) && (now == max)) {
         max++
     }
     console.log(`max---- ${max}`)
     console.log(`star ${star}`)
     console.log("--ปจบ--->" + now)
     window.location.href = "city.html?" + max
-}
-function icePoint(){
-    var star = document.getElementById("star").src
-    star = star.split("image/")
-    star = star[1]
-    star = star.charAt(0);
-    if(totalpoint >=800){
-        document.getElementById("star").src = `image/${3}Satr.png`
-    }else if(totalpoint >=700){
-        document.getElementById("star").src = `image/${2}Satr.png`
-    }else if(totalpoint >=500){
-        document.getElementById("star").src = `image/${2}Satr.png`
-    }else{
-        document.getElementById("star").src = `image/${0}Satr.png`
-    }
 }

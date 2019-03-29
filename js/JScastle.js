@@ -41,7 +41,7 @@ function init() {
             document.getElementById("timeCs").innerHTML = "0"
             Timeout();
         }
-    }, 100);
+    }, 1000);
 
     random();
 }

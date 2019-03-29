@@ -3,6 +3,10 @@ var sign;
 var num1, num2, reLocation, result, result1, result2, result3;
 var select;
 var scoreValue = 0;
+var now = window.location.href;
+now = now.split("/lil/")
+now = now[2]
+
 
 function init(){
     var timeleft = 19;
@@ -14,7 +18,7 @@ function init(){
             document.getElementById("timeIce").innerHTML = "0"
             Timeout();
         }
-    }, 2000);
+    }, 1000);
     remix()
 }
 
@@ -195,5 +199,7 @@ function score() {
     }, 500)
   }
   function Timeout() {
-    window.location.href = "star.html?"+scoreValue;
+    var maxlevel = window.location.href
+      maxlevel = maxlevel.split("/lil/")
+      window.location.href = "star.html?"+scoreValue+"?ice"+"?"+maxlevel[1].charAt(0)+"?"+now
   }
