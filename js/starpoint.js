@@ -34,7 +34,6 @@ function castlePoint() {
     console.log("point " + totalpoint)
     console.log("star " + star)
 }
-<<<<<<< HEAD
 // ----ถัดไป
 function next() {
     var now = window.location.href;
@@ -51,7 +50,6 @@ function next() {
     console.log("--ปจบ--->" + now)
     window.location.href = "city.html?" + max
 }
-=======
 function icePoint(){
     var star = document.getElementById("star").src
     star = star.split("image/")
@@ -67,4 +65,3 @@ function icePoint(){
         document.getElementById("star").src = `image/${0}Satr.png`
     }
 }
->>>>>>> a12c7229406755b30b08713654751b237fb6d1ed
