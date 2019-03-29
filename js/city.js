@@ -1,60 +1,76 @@
-/*id 1-9 เป็น id รูปปกติ
+/*id 1-9 เป็น id รูปปกติ(YELLOW)
 id 1load-9load เป็น id รูปโหลดเรียงตามปุ่ม
-id 1gray-9gray เป็น id รูปสีเทา ไม่สามารถกดเล่นได้*/ 
+id 1gray-9gray เป็น id รูปสีเทา ไม่สามารถกดเล่นได้*/
 
-
-function onload(){
-    // document.getElementById("1").style.visibility = "hidden";
-    document.getElementById("2").style.visibility = "hidden";
-    document.getElementById("3").style.visibility = "hidden";
-    document.getElementById("4").style.visibility = "hidden";
-    document.getElementById("5").style.visibility = "hidden";
-    document.getElementById("6").style.visibility = "hidden";
-    document.getElementById("7").style.visibility = "hidden";
-    document.getElementById("8").style.visibility = "hidden";
-    document.getElementById("9").style.visibility = "hidden";
-    
-    document.getElementById("1load").style.visibility = "hidden";
-    document.getElementById("3load").style.visibility = "hidden";
-    document.getElementById("4load").style.visibility = "hidden";
-    document.getElementById("5load").style.visibility = "hidden";
-    document.getElementById("6load").style.visibility = "hidden";
-    document.getElementById("7load").style.visibility = "hidden";
-    document.getElementById("8load").style.visibility = "hidden";
-    document.getElementById("9load").style.visibility = "hidden";
-
-    document.getElementById("2gray").style.visibility = "hidden";
-
-
-
+var max = 8;
+function onload() {
+    for (i = 1; i <= 9; i++) {
+       // console.log(max)
+        if (i <= max) {
+            document.getElementById(i).style.visibility = "visible";
+            document.getElementById(`${i}load`).style.visibility = "hidden";
+            document.getElementById(`${i}gray`).style.visibility = "hidden";
+            if (i == max) {
+                document.getElementById(`${i}load`).style.visibility = "visible";
+                document.getElementById(`${i}gray`).style.visibility = "hidden";
+                document.getElementById(i).style.visibility = "hidden";
+            }
+        } else {
+            document.getElementById(`${i}gray`).style.visibility = "visible";
+            document.getElementById(i).style.visibility = "hidden";
+            document.getElementById(`${i}load`).style.visibility = "hidden";
+        }
+    }
 }
-function click1(){
-    document.getElementById("1").style.visibility = "hidden";
-    document.getElementById("2").style.visibility = "hidden";
-    document.getElementById("3").style.visibility = "hidden";
-    document.getElementById("4").style.visibility = "hidden";
-    document.getElementById("5").style.visibility = "hidden";
-    document.getElementById("6").style.visibility = "hidden";
-    document.getElementById("7").style.visibility = "hidden";
-    document.getElementById("8").style.visibility = "hidden";
-    document.getElementById("9").style.visibility = "hidden";
+function clicknow(id) {
+    for (i = 1; i <= 9; i++) {
+        if (i <= max) {
+            document.getElementById(i).style.visibility = "visible";
+        } else {
+            document.getElementById(i).style.visibility = "hidden";
+        }
+    }
+    for (i = 1; i <= 9; i++) {
+        if (i == id) {
+            document.getElementById(`${i}load`).style.visibility = "visible";
+            document.getElementById(i).style.visibility = "hidden";
+            document.getElementById(`${i}gray`).style.visibility = "hidden";
+        } else {
+            document.getElementById(`${i}load`).style.visibility = "hidden";
+            //document.getElementById(`${i}gray`).style.visibility = "visible";
+        }
+    }
+}
 
-    document.getElementById("1load").style.visibility = "visible";
-    document.getElementById("2load").style.visibility = "hidden";
-    document.getElementById("3load").style.visibility = "hidden";
-    document.getElementById("4load").style.visibility = "hidden";
-    document.getElementById("5load").style.visibility = "hidden";
-    document.getElementById("6load").style.visibility = "hidden";
-    document.getElementById("7load").style.visibility = "hidden";
-    document.getElementById("8load").style.visibility = "hidden";
-    document.getElementById("9load").style.visibility = "hidden";
-
-    document.getElementById("2gray").style.visibility = "visible";
-    document.getElementById("3gray").style.visibility = "visible";
-    document.getElementById("4gray").style.visibility = "visible";
-    document.getElementById("5gray").style.visibility = "visible";
-    document.getElementById("6gray").style.visibility = "visible";
-    document.getElementById("7gray").style.visibility = "visible";
-    document.getElementById("8gray").style.visibility = "visible";
-    document.getElementById("9gray").style.visibility = "visible";
+function go(lv) {
+    //alert(lv)
+    switch (lv) {
+        case 1:
+            window.location.href = "lava.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 2:
+            window.location.href = "lava.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 3:
+            window.location.href = "lava.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 4:
+            window.location.href = "ice1.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 5:
+            window.location.href = "ice2.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 6:
+            window.location.href = "ice3.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 7:
+            window.location.href = "castle.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 8:
+            window.location.href = "castle.html?" + `max//${max}?cli//${lv}`
+            break;
+        case 9:
+            window.location.href = "castle.html?" + `max//${max}?cli//${lv}`
+            break;
+    }
 }
