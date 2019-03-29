@@ -1,3 +1,7 @@
+var now = window.location.href;
+now = now.split("/lil/")
+now = now[2]
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
@@ -27,6 +31,7 @@ function drop(ev) {
     }
 }
 function init() {
+    console.log(now + "  ----> ด่านปัจจุบัน")
     var timeleft = 19;
     var downloadTimer = setInterval(function () {
         document.getElementById("timeCs").innerHTML = timeleft;
@@ -36,7 +41,7 @@ function init() {
             document.getElementById("timeCs").innerHTML = "0"
             Timeout();
         }
-    }, 120);
+    }, 100);
 
     random();
 }
@@ -44,10 +49,10 @@ function random() {
     var i = Math.floor(Math.random() * 9) + 1;
     var d1 = `image/clock/level1/${i}clock.png`;
     var j = Math.floor(Math.random() * 9) + 1;
-    if (j == i) j = Math.floor(Math.random() * 9) + 1;
+    while(j == i) j = Math.floor(Math.random() * 9) + 1;
     var d2 = `image/clock/level1/${j}clock.png`;
     var k = Math.floor(Math.random() * 9) + 1;
-    if (k == j || k == i) k = Math.floor(Math.random() * 9) + 1;
+    while (k == j || k == i) k = Math.floor(Math.random() * 9) + 1;
     var d3 = `image/clock/level1/${k}clock.png`;
     document.getElementById("drag1").src = d1;
     document.getElementById("drag2").src = d2;
@@ -67,15 +72,15 @@ function next() {
     result1 = path1.charAt(num1 - 1);
     result2 = path2.charAt(num2 - 1);
     result3 = path3.charAt(num3 - 1);
-    console.log(`${result1} -- ${result2} -- ${result3}`)
+    console.log(`${result1} -- ${result2} -- ${result3} --result--`)
     var time = document.getElementById("timeCs").textContent
-    console.log(time + "--------")
+    console.log(time + "-time-")
 
     if ((result1 < result2) && (result2 < result3)) {
         point += 5;
         var score = document.getElementById("scoreCs")
         score.innerHTML = `Your Score : ${point}`
-        console.log(score + "555555555555555")
+        console.log(point + "point")
     } else {
         if (point > 1) {
             point -= 2;
@@ -88,5 +93,7 @@ function next() {
     random()
 }
 function Timeout() {
-    window.location.href = "star.html?"+point+"?cs"
+    var maxlevel = window.location.href
+    maxlevel = maxlevel.split("/lil/")
+    window.location.href = "star.html?"+point+"?cs"+"?"+maxlevel[1].charAt(0)+"?"+now
 }
