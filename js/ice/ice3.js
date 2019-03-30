@@ -9,7 +9,7 @@ now = now[2]
 
 
 function init(){
-    var timeleft = 19;
+    var timeleft = 29;
     var downloadTimer = setInterval(function () {
         document.getElementById("timeIce").innerHTML = timeleft;
         timeleft -= 1;

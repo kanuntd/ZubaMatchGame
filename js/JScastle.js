@@ -32,7 +32,7 @@ function drop(ev) {
 }
 function init() {
     console.log(now + "  ----> ด่านปัจจุบัน")
-    var timeleft = 19;
+    var timeleft = 29;
     var downloadTimer = setInterval(function () {
         document.getElementById("timeCs").innerHTML = timeleft;
         timeleft -= 1;
@@ -46,14 +46,22 @@ function init() {
     random();
 }
 function random() {
+    var lev;
+    if(now == 7){
+        lev = 1
+    }else if(now == 8){
+        lev = 2
+    }else if(now == 9){
+        lev = 9
+    }
     var i = Math.floor(Math.random() * 9) + 1;
-    var d1 = `image/clock/level1/${i}clock.png`;
+    var d1 = `image/clock/level${lev}/${i}clock.png`;
     var j = Math.floor(Math.random() * 9) + 1;
     while(j == i) j = Math.floor(Math.random() * 9) + 1;
-    var d2 = `image/clock/level1/${j}clock.png`;
-    var k = Math.floor(Math.random() * 9) + 1;
+    var d2 = `image/clock/level${lev}/${j}clock.png`;
+    var k = Math.floor(Math.random(lev) * 9) + 1;
     while (k == j || k == i) k = Math.floor(Math.random() * 9) + 1;
-    var d3 = `image/clock/level1/${k}clock.png`;
+    var d3 = `image/clock/level${lev}/${k}clock.png`;
     document.getElementById("drag1").src = d1;
     document.getElementById("drag2").src = d2;
     document.getElementById("drag3").src = d3;
