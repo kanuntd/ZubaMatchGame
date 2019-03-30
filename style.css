@@ -170,6 +170,7 @@ button.card{
 button.buttonOK{
     background-color: rgba(16, 235, 125, 0.849);
     border-color: rgb(54, 52, 52); 
+    border-radius: 4px;
     width: 80px;
     height: 40px;
     font-weight: bold;
@@ -178,15 +179,20 @@ button.buttonOK{
 }
 
 .sBoard{
-    background-color: rgba(250, 150, 18, 0.685);
+    border: 6px solid rgb(255, 147, 45);
+    background-color: beige;
     margin-right: 24%;
     float: right;
-    color: rgb(216, 42, 42);
+    color: rgb(48, 46, 45);
+    /* color: rgb(216, 42, 42); */
+    border-radius: 8px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
 }
 
 .label{
-    margin-left: 2%;
-    margin-right: -10%;
+    /* margin-left: 2%; */
+    margin-right: 0%;
     float: left;
 }
 

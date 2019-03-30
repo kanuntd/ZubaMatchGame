@@ -188,7 +188,7 @@ function checkAns() {
 
 //setTextScore
 function setTextScore() {
-    document.getElementById("scoreboard").innerHTML = "&nbsp;&nbsp;Score : " + score + "&nbsp;&nbsp;"
+    document.getElementById("scoreboard").innerHTML = "&nbsp;&nbsp;Your Score : " + score + "&nbsp;&nbsp;"
 }
 
 
