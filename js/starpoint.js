@@ -66,13 +66,13 @@ function lavaPoint() {
     star = star.split("image/")
     star = star[1]
     star = star.charAt(0);
-    if (totalpoint >= 360) {
+    if (totalpoint >= 420) {
         document.getElementById("star").src = `image/${3}Satr.png`
         star = 3
-    } else if (totalpoint >= 280) {
+    } else if (totalpoint >= 310) {
         document.getElementById("star").src = `image/${2}Satr.png`
         star = 2
-    } else if (totalpoint >= 140) {
+    } else if (totalpoint >= 200) {
         document.getElementById("star").src = `image/${1}Satr.png`
         star = 1
     } else {

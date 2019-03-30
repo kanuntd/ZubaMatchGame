@@ -95,11 +95,10 @@ function randomCard() {
     for (i = 0; i < cardMax; i++) {
         var ans = document.getElementById(String("ans" + (i + 1)));
         //ans.setAttribute("class", "card");
-        //ans.setAttribute("data-score", undefined);
+        ans.removeAttribute("data-score");
+        ans.disabled = true;
         ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
-
     }
-
 }
 
 
@@ -127,7 +126,6 @@ function randomClick(obj) {
             break;
         }
     }
-
 }
 
 
@@ -208,21 +206,6 @@ function nextGame() {
     else if (checkPoint == 3) {
         randomCardHard();
     }
-
-    //set disabled=true button random
-    for (i = 0; i < cardMax; i++) {
-        var random = document.getElementById(String("random" + (i + 1)));
-        random.disabled = false;
-        //console.log(random);
-    }
-
-    //set disabled=false button ans
-    for (i = 0; i < cardMax; i++) {
-        var ans = document.getElementById(String("ans" + (i + 1)));
-        ans.removeAttribute("data-score");
-        ans.disabled = true;
-        //console.log(ans);
-    }
 }
 
 
@@ -260,45 +243,15 @@ function gameStop() {
     //สรุปคะแนน
     setTextScore();
 
-    //เพิ่มค่าเพื่อจะเปลี่ยนด่าน
-    checkPoint = checkPoint + 1;
-
-    //-----------------------ถ้าครบ 3 ด่านแล้วไปหน้าถัดไป------------------------
-    if (checkPoint == 4) {
-        //ครบ 3 เกมแล้ว
-        afterGame();
-    }
-
-    else {
-        //ยังไม่ครบ 3 เกม และ จบเกมเตรียมไปหน้าต่อไป
-        //alertNext();
-        checkStar();
-    }
-
-
+    //ไป check Star
+    checkStar();
 }
 
 //Check Star
-function checkStar(){
+function checkStar() {
     var maxlevel = window.location.href
     maxlevel = maxlevel.split("/lil/")
-    window.location.href = "star.html?"+score+"?lava"+"?"+maxlevel[1].charAt(0)+"?"+now
-}
-
-
-//alert to next checkpoint
-function alertNext() {
-
-    var timeleft = 3;
-    var overTimer = setInterval(function () {
-        timeleft--;
-        document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next checkpoint in &nbsp;" + timeleft + "&nbsp&nbsp";
-        if (timeleft < 0) {
-            clearInterval(overTimer);
-            document.getElementById("alertPoint").innerHTML = "";
-            load();
-        }
-    }, 1000);
+    window.location.href = "star.html?" + score + "?lava" + "?" + maxlevel[1].charAt(0) + "?" + now
 }
 
 //before Game
@@ -306,7 +259,7 @@ function beforeGame() {
 
     //แสดง checkpoint & numClock
     document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
-    document.getElementById("timeCs").innerHTML = 20;
+    document.getElementById("timeCs").innerHTML = 30;
 
     //ปิดปุ่ม OK
     document.getElementById("okClick").disabled = true;
@@ -332,21 +285,6 @@ function beforeGame() {
         }
     }, 1000);
 }
-
-//after Game
-function afterGame() {
-    var timeleft = 3;
-    var overTimer = setInterval(function () {
-        timeleft--;
-        document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next game in &nbsp;" + timeleft + "&nbsp&nbsp";
-        if (timeleft < 0) {
-            clearInterval(overTimer);
-            document.getElementById("alertPoint").innerHTML = "";
-            window.location = "./ice1.html"
-        }
-    }, 1000);
-}
-
 
 
 //------------------------------------------------Checkpoint 2-----------------------------------------------------------
@@ -383,7 +321,8 @@ function randomCardNormal() {
     for (i = 0; i < cardMax; i++) {
         var ans = document.getElementById(String("ans" + (i + 1)));
         //ans.setAttribute("class", "card");
-        //ans.setAttribute("data-score", undefined);
+        ans.removeAttribute("data-score");
+        ans.disabled = true;
         ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
 
     }
@@ -427,7 +366,8 @@ function randomCardHard() {
     for (i = 0; i < cardMax; i++) {
         var ans = document.getElementById(String("ans" + (i + 1)));
         //ans.setAttribute("class", "card");
-        //ans.setAttribute("data-score", undefined);
+        ans.removeAttribute("data-score");
+        ans.disabled = true;
         ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
 
     }
