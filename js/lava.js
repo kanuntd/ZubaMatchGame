@@ -40,7 +40,6 @@ function load() {
         document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCardHard();
     }
-    //alert("Are you ready!!");
 
 
     //*********************************************  Time  *********************************************/
@@ -156,7 +155,6 @@ function ansClick(obj) {
         }
     }
 }
-
 
 //OK Click button
 function checkAns() {
@@ -326,7 +324,6 @@ function randomCardNormal() {
         ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
 
     }
-
 }
 
 
@@ -371,5 +368,4 @@ function randomCardHard() {
         ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
 
     }
-
 }
