@@ -6,18 +6,28 @@ var max = window.location.href;
 max = max.split("?")
 max = max[1]/////edit to 1
 function onload() {
+    
     for (i = 1; i <= 9; i++) {
+        document.getElementById("text").style.visibility = "hidden";
+        document.getElementById("zuba").style.visibility = "hidden";
        // console.log(max)
         if (i <= max) {
             document.getElementById(i).style.visibility = "visible";
             document.getElementById(`${i}load`).style.visibility = "hidden";
             document.getElementById(`${i}gray`).style.visibility = "hidden";
+           
             if (i == max) {
                 document.getElementById(`${i}load`).style.visibility = "visible";
                 document.getElementById(`${i}gray`).style.visibility = "hidden";
                 document.getElementById(i).style.visibility = "hidden";
+               
+            }if(max == 10){
+                document.getElementById("text").style.visibility = "visible";
+                document.getElementById("zuba").style.visibility = "visible";
             }
         } else {
+            document.getElementById("text").style.visibility = "hidden";
+            document.getElementById("zuba").style.visibility = "hidden";
             document.getElementById(`${i}gray`).style.visibility = "visible";
             document.getElementById(i).style.visibility = "hidden";
             document.getElementById(`${i}load`).style.visibility = "hidden";
@@ -25,6 +35,7 @@ function onload() {
     }
 }
 function clicknow(id) {
+    
     for (i = 1; i <= 9; i++) {
         if (i <= max) {
             document.getElementById(i).style.visibility = "visible";
