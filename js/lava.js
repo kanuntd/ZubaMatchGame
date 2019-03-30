@@ -5,6 +5,12 @@ var ansCards = [];
 var score = 0;
 var solve = [];
 
+var now = window.location.href;
+now = now.split("/lil/")
+now = now[2]
+checkPoint = now;
+
+//Start
 function start() {
     if (checkPoint < 0 || checkPoint > 3) {
         window.location = "./ice1.html"
@@ -13,6 +19,7 @@ function start() {
     }
 }
 
+//Load
 function load() {
 
     //reset array
@@ -22,14 +29,14 @@ function load() {
     document.getElementById("okClick").disabled = false;
 
     //เช็คว่าเป็นด่านไหน
-    if (checkPoint === 1) {
+    if (checkPoint == 1) {
         document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCard();
-    } else if (checkPoint === 2) {
+    } else if (checkPoint == 2) {
         document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCardNormal();
     }
-    else if (checkPoint === 3) {
+    else if (checkPoint == 3) {
         document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
         randomCardHard();
     }
@@ -42,6 +49,7 @@ function load() {
     //ก่อนนับ
     document.getElementById("timeCs").innerHTML = timeleft;
 
+    //เริ่มนับ
     var overTimer = setInterval(function () {
         timeleft--;
         document.getElementById("timeCs").innerHTML = timeleft;
@@ -52,7 +60,7 @@ function load() {
     }, 1000);
 }
 
-//random and settext button
+//Random and settext button
 function randomCard() {
 
     //cards[i] = random
@@ -108,14 +116,14 @@ function randomClick(obj) {
             var ans = document.getElementById(String("ans" + (i + 1)));
             ans.setAttribute("data-score", ansCards[i]);
             ans.innerHTML = "<span class='card-score'>" + ansCards[i] + "</span>";
-            ans.disabled = "";
+            ans.disabled = false;
 
             //ให้ตัวที่กดซ่อนตัวเลข
             var random = document.getElementById(obj.id);
             //console.log(random);
             //console.log(obj.id);
             random.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
-            random.disabled = "true";
+            random.disabled = true;
             break;
         }
     }
@@ -132,7 +140,7 @@ function ansClick(obj) {
             //ให้random[i] = obj
             var random = document.getElementById(String("random" + (i + 1)));
             random.innerHTML = "<span class='card-score'>" + cardScore + "</span>";
-            random.disabled = "";
+            random.disabled = false;
 
             //ให้ตัวที่กดลบค่าและว่าง
             for (i = 0; i < cardMax; i++) {
@@ -145,8 +153,7 @@ function ansClick(obj) {
             //console.log(obj.id);
             ans.setAttribute("data-score", undefined);
             ans.innerHTML = "<span class='card-score'>" + "&nbsp" + "</span>";
-            ans.disabled = "true";
-
+            ans.disabled = true;
             break;
         }
     }
@@ -187,18 +194,18 @@ function setTextScore() {
 }
 
 
-//nextGame
+//nextGame (checkpointเดิม)
 function nextGame() {
 
     resetArray();
 
     //เช็คว่าเป็นด่านไหน
-    if (checkPoint === 1) {
+    if (checkPoint == 1) {
         randomCard();
-    } else if (checkPoint === 2) {
+    } else if (checkPoint == 2) {
         randomCardNormal();
     }
-    else if (checkPoint === 3) {
+    else if (checkPoint == 3) {
         randomCardHard();
     }
 
@@ -257,31 +264,32 @@ function gameStop() {
     checkPoint = checkPoint + 1;
 
     //-----------------------ถ้าครบ 3 ด่านแล้วไปหน้าถัดไป------------------------
-    if (checkPoint === 4) {
+    if (checkPoint == 4) {
         //ครบ 3 เกมแล้ว
         afterGame();
     }
 
     else {
         //ยังไม่ครบ 3 เกม และ จบเกมเตรียมไปหน้าต่อไป
-        alertNext();
+        //alertNext();
+        checkStar();
     }
 
 
+}
+
+//Check Star
+function checkStar(){
+    var maxlevel = window.location.href
+    maxlevel = maxlevel.split("/lil/")
+    window.location.href = "star.html?"+score+"?lava"+"?"+maxlevel[1].charAt(0)+"?"+now
 }
 
 
 //alert to next checkpoint
 function alertNext() {
 
-    //----------ส่วนแสดงคะแนน----------
-
-
-
-    //--------------------------------
-
-
-    var timeleft = 10;
+    var timeleft = 3;
     var overTimer = setInterval(function () {
         timeleft--;
         document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next checkpoint in &nbsp;" + timeleft + "&nbsp&nbsp";
@@ -298,7 +306,7 @@ function beforeGame() {
 
     //แสดง checkpoint & numClock
     document.getElementById("checkPoint").innerHTML = "Checkpoint &nbsp;" + checkPoint + "&nbsp; คำสั่ง &nbsp; : &nbsp;จงเรียงตัวเลขจากน้อยไปมาก"
-    document.getElementById("timeCs").innerHTML = 30;
+    document.getElementById("timeCs").innerHTML = 20;
 
     //ปิดปุ่ม OK
     document.getElementById("okClick").disabled = true;
@@ -311,7 +319,9 @@ function beforeGame() {
     }
 
     //time
-    var timeleft = 10;
+    var timeleft = 3;
+    document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp Game starts in &nbsp;" + timeleft + "&nbsp&nbsp";
+
     var overTimer = setInterval(function () {
         timeleft--;
         document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp Game starts in &nbsp;" + timeleft + "&nbsp&nbsp";
@@ -325,7 +335,7 @@ function beforeGame() {
 
 //after Game
 function afterGame() {
-    var timeleft = 10;
+    var timeleft = 3;
     var overTimer = setInterval(function () {
         timeleft--;
         document.getElementById("alertPoint").innerHTML = "&nbsp&nbsp The next game in &nbsp;" + timeleft + "&nbsp&nbsp";

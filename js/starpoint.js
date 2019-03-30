@@ -12,6 +12,8 @@ function getPoint() {
         castlePoint()
     } else if (lv == "ice") {
         icePoint()
+    } else if (lv == "lava") {
+        lavaPoint()
     }
     console.log(lv)
 }
@@ -58,6 +60,28 @@ function icePoint() {
     // console.log("star " + star)
 }
 
+
+function lavaPoint() {
+    star = document.getElementById("star").src
+    star = star.split("image/")
+    star = star[1]
+    star = star.charAt(0);
+    if (totalpoint >= 360) {
+        document.getElementById("star").src = `image/${3}Satr.png`
+        star = 3
+    } else if (totalpoint >= 280) {
+        document.getElementById("star").src = `image/${2}Satr.png`
+        star = 2
+    } else if (totalpoint >= 140) {
+        document.getElementById("star").src = `image/${1}Satr.png`
+        star = 1
+    } else {
+        document.getElementById("star").src = `image/${0}Satr.png`
+        star = 0
+    }
+    // console.log("point " + totalpoint)
+    // console.log("star " + star)
+}
 
 
 // ----ถัดไป ----- ไว้ล่างสุด
