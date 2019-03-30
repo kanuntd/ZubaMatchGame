@@ -18,7 +18,7 @@ function init(){
             document.getElementById("timeIce").innerHTML = "0"
             Timeout();
         }
-    }, 1000);
+    }, 700);
     remix()
 }
 

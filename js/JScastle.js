@@ -41,7 +41,7 @@ function init() {
             document.getElementById("timeCs").innerHTML = "0"
             Timeout();
         }
-    }, 1000);
+    }, 100);
 
     random();
 }
@@ -52,7 +52,7 @@ function random() {
     }else if(now == 8){
         lev = 2
     }else if(now == 9){
-        lev = 9
+        lev = 3
     }
     var i = Math.floor(Math.random() * 9) + 1;
     var d1 = `image/clock/level${lev}/${i}clock.png`;
@@ -103,5 +103,7 @@ function next() {
 function Timeout() {
     var maxlevel = window.location.href
     maxlevel = maxlevel.split("/lil/")
-    window.location.href = "star.html?"+point+"?cs"+"?"+maxlevel[1].charAt(0)+"?"+now
+    maxlevel = maxlevel[1].split("?")
+    console.log(maxlevel[0]+"<---------")
+    window.location.href = "star.html?"+point+"?cs"+"?"+maxlevel[0]+"?"+now
 }

@@ -92,8 +92,12 @@ function next() {
     var max = window.location.href;
     max = max.split("?")
     max = max[3]
-    if ((star > 0 && max != 9) && (now == max)) {
+    console.log(`max---- ${max}`)
+    if ((star > 0) && (now == max)) {
         max++
+        if(max == 10){
+            max = "ten"
+        }
     }
     console.log(`max---- ${max}`)
     console.log(`star ${star}`)

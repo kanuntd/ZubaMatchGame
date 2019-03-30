@@ -5,6 +5,9 @@ id 1gray-9gray เป็น id รูปสีเทา ไม่สามาร
 var max = window.location.href;
 max = max.split("?")
 max = max[1]/////edit to 1
+if(max === "ten"){
+    max = 10
+}
 function onload() {
     
     for (i = 1; i <= 9; i++) {
