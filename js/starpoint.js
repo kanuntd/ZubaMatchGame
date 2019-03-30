@@ -22,13 +22,13 @@ function castlePoint() {
     star = star.split("image/")
     star = star[1]
     star = star.charAt(0);
-    if (totalpoint >= 15) {
+    if (totalpoint >= 150) {
         document.getElementById("star").src = `image/${3}Satr.png`
         star = 3
-    } else if (totalpoint >= 10) {
+    } else if (totalpoint >= 350) {
         document.getElementById("star").src = `image/${2}Satr.png`
         star = 2
-    } else if (totalpoint >= 5) {
+    } else if (totalpoint >= 600) {
         document.getElementById("star").src = `image/${1}Satr.png`
         star = 1
     } else {

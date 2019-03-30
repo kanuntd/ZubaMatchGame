@@ -85,17 +85,19 @@ function next() {
     console.log(time + "-time-")
 
     if ((result1 < result2) && (result2 < result3)) {
-        point += 5;
+        point += 100;
         var score = document.getElementById("scoreCs")
         score.innerHTML = `Your Score : ${point}`
         console.log(point + "point")
     } else {
-        if (point > 1) {
-            point -= 2;
+        if (point > 55) {
+            point -= 55;
             var score = document.getElementById("scoreCs")
             score.innerHTML = `Your Score : ${point}`
         }else{
             point = 0;
+            var score = document.getElementById("scoreCs")
+            score.innerHTML = `Your Score : ${point}`
         }
     }
     random()
