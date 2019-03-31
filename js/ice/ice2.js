@@ -10,15 +10,19 @@ now = now[2]
 
 function init(){
     var timeleft = 29;
+    var x = document.getElementById("time"); 
     var downloadTimer = setInterval(function () {
         document.getElementById("timeIce").innerHTML = timeleft;
         timeleft -= 1;
         if (timeleft == 0) {
+          x.pause();
             clearInterval(downloadTimer);
             document.getElementById("timeIce").innerHTML = "0"
             Timeout();
+        }else if(timeleft == 9){
+            x.play();
         }
-    }, 700);
+    }, 1000);
     multiORdiv()
 }
 
@@ -155,18 +159,38 @@ function score() {
     if (reLocation == 1) {
       if (select == "bag4") {
         scoreValue = scoreValue + 100;
+        var x = document.getElementById("correct"); 
+        x.play(); 
+      }else{
+        var x = document.getElementById("incorrect"); 
+        x.play();
       }
     } else if (reLocation == 2) {
       if (select == "bag5") {
         scoreValue = scoreValue + 100;
+        var x = document.getElementById("correct"); 
+        x.play(); 
+      }else{
+        var x = document.getElementById("incorrect"); 
+        x.play();
       }
     } else if (reLocation == 3) {
       if (select == "bag6") {
         scoreValue = scoreValue + 100;
+        var x = document.getElementById("correct"); 
+        x.play(); 
+      }else{
+        var x = document.getElementById("incorrect"); 
+        x.play();
       }
     } else {
       if (select == "bag7") {
         scoreValue = scoreValue + 100;
+        var x = document.getElementById("correct"); 
+        x.play(); 
+      }else{
+        var x = document.getElementById("incorrect"); 
+        x.play();
       }
     }
     console.log(scoreValue);
