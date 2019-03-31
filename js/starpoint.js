@@ -1,9 +1,5 @@
 var totalpoint;
 var star;
-var lose = document.getElementById("lose"); 
-var star1 = document.getElementById("1star");  
-var star2 = document.getElementById("2star"); 
-var win = document.getElementById("win"); 
 function getPoint() {
     var url = window.location.href
     // console.log(url)
@@ -28,19 +24,15 @@ function castlePoint() {
    
     if (totalpoint >= 600) {
         document.getElementById("star").src = `image/${3}Satr.png`
-        document.getElementById("win").autostart = "true"
         star = 3
     } else if (totalpoint >= 350) {
         document.getElementById("star").src = `image/${2}Satr.png`
-        document.getElementById("star2").autostart = "true"
         star = 2
     } else if (totalpoint >= 135) {
         document.getElementById("star").src = `image/${1}Satr.png`
-        document.getElementById("star1").autostart = "true"
         star = 1
     } else {
         document.getElementById("star").src = `image/${0}Satr.png`
-        document.getElementById("lose").autostart = "true"
         star = 0
     }
     console.log("point " + totalpoint)
