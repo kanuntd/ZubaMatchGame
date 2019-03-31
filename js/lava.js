@@ -44,6 +44,7 @@ function load() {
 
     //*********************************************  Time  *********************************************/
     var timeleft = 30;
+    var sound = document.getElementById("time"); 
 
     //ก่อนนับ
     document.getElementById("timeCs").innerHTML = timeleft;
@@ -54,8 +55,12 @@ function load() {
         document.getElementById("timeCs").innerHTML = timeleft;
         if (timeleft <= 0) {
             clearInterval(overTimer);
+            sound.pause();
             gameStop();
+        }else if(timeleft == 10){
+            sound.play();
         }
+
     }, 1000);
 }
 
@@ -104,6 +109,7 @@ function randomCard() {
 //randomClick
 function randomClick(obj) {
     var cardScore = parseInt(obj.dataset.score);
+    var sound = document.getElementById("card");
     // console.log(obj);
     // console.log(cardScore);
 
@@ -125,12 +131,14 @@ function randomClick(obj) {
             break;
         }
     }
+    sound.play();
 }
 
 
 //ansClick
 function ansClick(obj) {
     var cardScore = parseInt(obj.dataset.score);
+    var sound = document.getElementById("card");
 
     for (i = 0; i < cardMax; i++) {
         if (cards[i] === cardScore) {
@@ -154,12 +162,16 @@ function ansClick(obj) {
             break;
         }
     }
+    sound.play();
 }
 
 //OK Click button
 function checkAns() {
     //check ans is empty
     var bool = false;
+
+    //sound
+    var sound = document.getElementById("correct");
     for (i = 0; i < cardMax; i++) {
         if (ansCards[i] === undefined) {
             bool = true;
@@ -176,6 +188,7 @@ function checkAns() {
                 score = score + 20;
             }
         }
+        sound.play();
         setTextScore();
         nextGame();
     }
