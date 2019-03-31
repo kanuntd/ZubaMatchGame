@@ -33,13 +33,17 @@ function drop(ev) {
 function init() {
     console.log(now + "  ----> ด่านปัจจุบัน")
     var timeleft = 29;
+    var x = document.getElementById("time"); 
     var downloadTimer = setInterval(function () {
         document.getElementById("timeCs").innerHTML = timeleft;
         timeleft -= 1;
         if (timeleft == 0) {
+            x.pause();
             clearInterval(downloadTimer);
             document.getElementById("timeCs").innerHTML = "0"
             Timeout();
+        }else if(timeleft == 9){
+            x.play();
         }
     }, 700);
 
@@ -89,15 +93,22 @@ function next() {
         var score = document.getElementById("scoreCs")
         score.innerHTML = `Your Score : ${point}`
         console.log(point + "point")
+        var x = document.getElementById("correct"); 
+        x.play(); 
+     
     } else {
         if (point > 55) {
             point -= 55;
             var score = document.getElementById("scoreCs")
             score.innerHTML = `Your Score : ${point}`
+            var x = document.getElementById("incorrect"); 
+        x.play();
         }else{
             point = 0;
             var score = document.getElementById("scoreCs")
             score.innerHTML = `Your Score : ${point}`
+            var x = document.getElementById("incorrect"); 
+            x.play();
         }
     }
     random()
